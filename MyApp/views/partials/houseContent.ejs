@@ -1,0 +1,220 @@
+<span id="houseContent" class="content">
+    <ul id="listOfTables">
+            <h1>Rooms <button class="btn right" onclick="addRoomClicked()">Add room</button></h1>
+            <table class="table">
+                    <thead class="table-head">
+                        <tr class="table-row">
+                            <th class="table-header">Room Name</th>
+                            <th class="table-header">Room Capacity</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-body">
+                        <% account.rooms.forEach(function(room){%>
+                        <tr class="table-row">
+                            <td id="<%=room._id%>-label" class="table-col"><%=room.roomLabel%></td>
+                            <td id="<%=room._id%>-capacity" class="table-col"><%=room.roomCapacity%></td>
+                            <td>
+                                <button id = "<%=room._id%>" class="roundBtn" onclick="deleteRoomClicked(this)">
+                                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                                </button>
+                                <button id = "<%=room._id%>" class="roundBtn" onclick="editRoomClicked(this)">
+                                    <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                                </button>  
+                            </td>
+                            
+                        </tr>
+                        <% }) %>
+                    </tbody>
+            </table>
+            <h1>Rents <button class="btn right" onclick="addRentClicked()">Add Rent</button></h1>
+            <table class="table">
+                    <thead class="table-head">
+                        <tr class="table-row">
+                            <th class="table-header">Rent Number</th>
+                            <th class="table-header">Room</th>
+                            <th class="table-header">Occupants</th>
+                            <th class="table-header">Date Started (mm/dd/yy)</th>
+                            <th class="table-header">End Rent</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-body">
+                        
+                        <% account.rents.forEach(function(rent){%>
+                        <tr class="table-row">
+                            <td class="table-col"><%= rent.rentNum%></td>
+                            <th class="table-header"><%= rent.dateStarted.getMonth()%>/<%= rent.dateStarted.getDate()%>/<%= rent.dateStarted.getFullYear()%></th>
+                            <td class="table-col"><%= rent.roomID%></td>
+                            <td class="table-col">
+                                <ul>
+                                    <% rent.tenants.forEach(function(tenant){%>
+                                    <li><%= tenant.lname%>, <%= tenant.fname%> <%= tenant.mname%> <br> (<%= tenant.email%>)</li>
+                                    <%});%>
+                                </ul>
+                            </td>
+                            <td>
+                                <button id="rent.roomID"class="roundBtn" onclick="toggleHide('backDeleteModal')">
+                                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                                </button>
+                            </td>
+                        </tr>
+                        <% });%>
+                    </tbody>
+            </table>
+            <!-- make better class -->
+            
+            <h1>Invoice Items <button class="btn right" onclick="addProductClicked()">Add Item</button></h1>
+            <table class="table">
+                    <thead class="table-head">
+                        <tr class="table-row">
+                            <th class="table-header">Item Number </th>
+                            <th class="table-header">Product Name</th>
+                            <th class="table-header">Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-body">
+                        <tr class="table-row">
+                            <td class="table-col">001</td>
+                            <td class="table-col"> Rent Charge </td>
+                            <td class="table-col">6,000</td>                            
+                            <td>  
+                                <button class="roundBtn" onclick="toggleHide('backDeleteModal')">
+                                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                                </button>
+                                <button class="roundBtn" onclick="toggleHide('backProductModal')">
+                                    <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                                </button>  
+                            </td>
+                        </tr>
+                        <tr class="table-row">
+                            <td class="table-col">002</td>
+                            <td class="table-col">House Cleaning</td>
+                            <td class="table-col">50</td>                            
+                            <td>  
+                                <button class="roundBtn" onclick="toggleHide('backDeleteModal')">
+                                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                                </button>
+                                <button class="roundBtn" onclick="toggleHide('backProductModal')">
+                                    <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                                </button>  
+                            </td>
+                        </tr>
+                        <tr class="table-row">
+                            <td class="table-col">003</td>
+                            <td class="table-col">Air-con Maintenance</td>
+                            <td class="table-col">150</td>                            
+                            <td>  
+                                <button class="roundBtn" onclick="toggleHide('backDeleteModal')">
+                                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                                </button>
+                                <button class="roundBtn" onclick="toggleHide('backProductModal')">
+                                    <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                                </button>  
+                            </td>
+                        </tr>
+                    </tbody>
+            </table>
+    </ul>
+</span>
+
+<div id="backRoomModal" class="backBlur hide">
+    <div id="addRoomModal" class="dropDwn">
+        <button class="exitBtn" onclick="toggleHide('backRoomModal')">
+            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+        </button>  
+        <p class="boldLabel">Enter room details</p>
+        <form id="roomForm" action="/processRoom" method="POST">
+            <input name="id" value="<%= account._id %>" class="hide">          
+            <table>
+                    <p class="label">Room</p>
+                    <input id="labelInput" class="input" name="label" type="text" placeholder="Enter Room Label">
+                    <p class="label">Capacity</p>
+                    <input id="capacityInput" class="input" name="capacity" type="number" min="0" placeholder="Enter Capacity ">
+                    
+            </table>
+            <button id="addBtn" class="btn greenBtn"  onclick="dropPay(this)">Add Room</button>
+        </form>
+    </div>
+</div>
+
+<div id="backProductModal" class="backBlur hide">
+    <div id="addProductModal" class="">
+        <button class="exitBtn" onclick="toggleHide('backProductModal')">
+            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+        </button>  
+        <p class="boldLabel">Enter Product Details</p>
+        <form action="" method="POST">
+            <input name="id" value="<%= account._id %>" class="hide">
+            <p class="label">Product Name</p>
+            <p><input id="amountInput" type="text" placeholder="Product Name">
+            <p class="label">Capacity</p>
+            <input id="amountInput" type="number" min="0" placeholder="Amount ">
+            <button id="payBtn" class="btn greenBtn" onclick="dropPay(this)">Add Item</button>
+        </form>
+    </div>
+</div>
+
+<div id="backRentModal" class="backBlur hide " >
+    <div id="addRentModal" class="">
+        <button class="exitBtn" onclick="toggleHide('backRentModal')">
+            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+        </button>  
+        <form action="/processAddRent" method="POST">
+            <input name="id" value="<%= account._id %>" class="hide">
+            <table>
+                <tr>
+                    <td class="tableLabel white">Select Room</td>
+                    <td>
+                        <select name="roomId" class="sel">
+                            <% account.rooms.forEach(function(room){ %>
+                            <option value="<%= room.roomLabel%>" class="opt"><%= room.roomLabel%></option>
+                            <% })%>
+                        </select>     
+                    </td>
+                </tr>
+            </table>
+            <ul id="occList">
+                <li id="occTemplate" class="box">
+                        <p class="boldLabel">Occupant 1</p>
+                        <p class="label topZero">First Name</p>
+                        <input name="occ[0][fname]" class="invInpTitle" type="text"placeholder="Enter here">
+                        <p class="label">Last Name</p>
+                        <input name="occ[0][lname]" class="invInpTitle" type="text"placeholder="Enter here">
+                        <p class="label">Middile Name</p>
+                        <input name="occ[0][mname]"class="invInpTitle" type="text"placeholder="Enter here">
+                        <p class="label">Email Address</p>
+                        <input name="occ[0][email]" class="invInpDesc" type="text" placeholder="Address">
+                </li>
+                <div id="addOccupantBtn"class="center">
+                    <button id="invLiInput" type="button" onclick="addOccupantClicked()">Add more occupants</button>
+                </div>
+            </ul>
+            <button id="payBtn" class="greenBtn" onclick="dropPay(this)">Add Rent</button>
+        </form>
+        
+    </div>
+</div>
+
+
+<div id="backDeleteModal" class="backBlur hide">
+    <div id="deleteModal" class="">
+        <button class="exitBtn" onclick="toggleHide('backDeleteModal')">
+            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+        </button>  
+        <p class="boldLabel">Delete entry?</p>
+        <div class="centerParent">
+            <form id="delForm" action="" method="POST">
+                <button class="whiteBtn centerChild" onclick="toggleHide('backDeleteModal')">
+                    YES
+                </button>  
+                <!-- again not ideal??? -->
+                <input class="hide" name="id" value="<%=account._id%>"> 
+                <input class="hide" id="rmId" name="roomId" value=" "> 
+            </form>
+            <button class="whiteBtn centerChild" onclick="toggleHide('backDeleteModal')">
+                CANCEL
+            </button>  
+        </div>
+    </div>
+</div>
+
+

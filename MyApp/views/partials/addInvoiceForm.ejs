@@ -1,0 +1,53 @@
+<div id="invDropDwn" class="dropDwn hide">
+        <div>
+            <table>
+                <h3>No. 0001 </h3>
+                <tr>
+                    <td class="tableLabel">Desciption</td>
+                    <td><textarea id="descInput" type="text" placeholder="Enter description"></textarea></td>
+                </tr>
+                <tr>
+                    <td class="tableLabel">Date</td>
+                    <td><input id="dateInput" type="date"></td>
+                </tr>
+            </table>
+        </div>
+        
+        <p class="italicLabel">Items</p>
+        <div>
+            <ul id="invItemList">
+                <li id="invItem1" class="">
+                    <div id="itemContainer">
+                        <table>
+                            <tr>
+                                <td colspan="2"><input class="invInpTitle" type="text"placeholder="Item title"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><input class="invInpDesc" type="text" placeholder="Description"></td>
+                            </tr>
+                            <tr>
+                                <td><input class="invInpPrice" type="text" placeholder="Price"></td>
+                                <td><input class="invInpQuan" type="text" placeholder="Quantity"></td>
+                            </tr>
+                            <tr>
+                                <td><button class="itemBtn">delete</button></td>
+                                <td id="totalInItem"> <h4>0.00</h4></td>
+                                
+                            </tr>
+                        </table>    
+                    </div>
+                </li>
+                <div class="center">
+                    <button id="invLiInput">Add Item</button>
+                </div>
+                
+            </ul>
+        </div>
+        <table>
+            <tr>
+                <td class="tableLabel">Total  </td>
+                <td><h3>0.00</h3></td>
+            </tr>
+        </table>
+    
+    </div>

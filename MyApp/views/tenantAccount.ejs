@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Boarder</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="stylesOne.css">
+</head>
+<body>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    
+
+    <div id = "mainWidth" class="container">
+        <div id = "navBar" class="row">
+            <div id = "brandDiv" class="col-lg-10 col-md-10 col-sm-9 col-xs-7">
+                <h1 id="brandBoarder">Boarder</h1>
+            </div>
+            <div id = "accDiv" class="col-lg-2 col-md-2 col-sm-3 col-xs-5">
+                <button id="accBtn"class="btn btn-default"><a href="/login">Account</a></button>
+            </div>
+        </div>
+        <div class="content">            
+            <div id="content">
+                <h1>Room 1</h1>
+                <h4>Notes:</h4>
+                <ul id="list">
+                    <li id="liSample1" onclick="itemDone(this)" onmouseover="mouseOver(this)" onmouseout="mouseOut(this)" class=""><button class="delBtn hide">delete</button>Personal meeting with tenants</li>
+                    <li id="liSample2" onclick="itemDone(this)" onmouseover="mouseOver(this)" onmouseout="mouseOut(this)" class=""><button class="delBtn hide">delete</button>Schedule aircon cleaning</li>
+                    <input id="liInput" type = "text" onkeypress="addItem(this)" placeholder="+ Add item">
+                
+                </ul>
+            </div>
+            <h2>Your Balance</h2>
+            <div id="customerBalanceTable" class="tableContainer">
+                <table class="table">
+                    <thead class="table-head">
+                        <tr class="table-row">
+                            <th class="table-header">Type</th>
+                            <th class="table-header">Number</th>
+                            <th class="table-header">Date</th>
+                            <th class="table-header">Account</th>
+                            <th class="table-header">Amount</th>
+                            <th class="table-header">Running Balance</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-body">
+                        <tr class="table-row">
+                            <td class="table-col">Payment</td>
+                            <td class="table-col"> - </td>
+                            <td class="table-col">Jan 10, 2019</td>
+                            <td class="table-col">Cash Collection</td>
+                            <td class="table-col">-4,000</td>
+                            <td class="table-col">-4,000</td>
+                        </tr>
+                        <tr class="table-row">
+                            <td class="table-col">Invoice</td>
+                            <td class="table-col"> 1 </td>
+                            <td class="table-col">Jan 10, 2019</td>
+                            <td class="table-col">Accounts Receivable</td>
+                            <td class="table-col">4,000</td>
+                            <td class="table-col">0.00</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+     
+</body>
+</html>

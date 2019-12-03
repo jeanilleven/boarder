@@ -1,0 +1,580 @@
+
+/*our color pallate https://colorhunt.co/palette/22272 */
+.colors {
+    color: #1d4d4f;
+    color: #f9f7f7;
+} 
+
+
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: #1d4d4f;
+}
+
+/*--------UNIVERSAL STUFF-----------*/
+
+.centerParent {
+    text-align: center;
+
+}
+
+.centerChild {
+    display: inline-block;
+}
+
+.btn {
+    padding: 2px 30px;
+    border: none;
+    border-radius:15px;
+    height: 30px;
+    background-color: transparent;
+    color: #1d4d4f;
+    font-weight: 700;
+}
+.btn:hover {
+    
+    background-color: #1d4d4f;
+    color: #f9f7f7;
+}
+
+.inputText{
+    padding-bottom: 2%;
+    margin-bottom: 2%;
+    width: 60%;
+    font-size: 16px;
+    padding: 9px 0px 9px 18px;
+    border-radius: 18px;
+    height: 36px;
+    border: 3px solid #1d4d4f;
+    background-color: transparent;
+}
+
+/* ------------------- NAVGATION ------------------- */
+
+#nav {
+    max-width: 980px;
+    background: #1d4d4f ;
+    padding: 0px;
+}
+
+#brandBoarder {
+    font-weight: 700;
+    color: #f9f7f7;
+    padding-left: 20px;
+    margin-bottom: 0px;
+}
+
+#navoption > div > ul > li > a{
+    color: white;
+}
+
+#optionsContainer{
+    margin: 20px 0px 10px 0px;
+}
+
+#navBtn {
+    background-color: transparent;
+    color: white;
+    margin-right: 20px;
+}
+
+
+/* idk wtf this is */
+#accDiv > .btn {
+    margin: 20px 15px 15px 10px; 
+    padding: 2px 30px;
+    border: none;
+    border-radius: 20px;
+
+    color: #6FC1CF;
+    font-weight: 700;
+}
+/* ------------------- END - NAVGATION ------------------- */
+
+/* ------------------- TABS ------------------- */
+
+#tabs{
+    display: inline-block;
+    width: 100%;
+} 
+
+#tabs > div{
+    display: inline-block;
+}
+
+#tenantBtn, #accountingBtn{
+    margin: 20px 0px 0px 0px; 
+    padding: 10px 50px 10px 30px;
+    border-radius: 0px;
+    background: #F4FDFF;
+}
+
+/* ------------------- END - TABS ------------------- */
+
+/* ------------------- TENANT CONTENT ------------------- */
+
+#tenantContent {
+    display: block;
+    margin: 0px;
+    width:100%;
+    background: #F4FDFF;
+}
+
+#searchBox {
+    width: 275px;
+    height: 30px;
+    background: #CCE6EB;
+
+    border: none;
+    border-radius: 19px;
+
+    margin: 20px;
+
+    float: right;
+    
+    padding-left: 19px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-style: italic;
+    
+}
+
+#searchSpan {
+    width: 100%;
+    height: 70px;
+}
+
+#tileContainer{
+    width: 100%;
+    padding: 0px 10px 150px 10px;
+}
+
+.tile {
+    background-color: #5C949D;
+    color: white;
+    height: 500px;
+    padding: 20px;
+    border: 10px solid white;
+    border-radius: 20px;
+    
+}
+
+.tileAdd {
+    background-color: rgb(202, 223, 226);
+    text-align: center;
+}
+
+.tile > h1 {
+    margin: 0px;;
+}
+
+.tile > h4 {
+    font-style: italic;
+}
+
+.tileAdd > .btn {
+    display: inline;
+    text-align: center;
+    background-color: #F4FDFF;
+    margin: 200px auto;
+}
+
+.tile > #buttonsContainer > .btn {
+    margin: 5px 0px;
+    display: block;
+    width: 160px;
+    padding-left: 10px;
+    text-align: left;
+}
+
+.tile > #buttonsContainer {
+    width: auto;
+    position: absolute;
+    bottom: 0;
+    padding: 10px 0px 20px 0px ;
+}
+
+select {
+    color: black;
+}
+/* ------------------- END TENANT CONTENT ------------------- */
+
+
+
+/* ------------------- LOGIN CONTENT ------------------- */
+.separator{
+    width:100%;
+    height: 6px;
+    background-color: white;
+}
+
+#btn{
+    background-color: black;
+}
+
+#loginWidth{
+    max-width: 980px;
+    padding: 0px 50px;
+    background: #1d4d4f;
+}
+
+.innerColumn{
+
+    margin-top: 10%;
+    margin-bottom: 10%;   
+    background: white;
+    padding: 50px 0px;
+    border-radius: 15px;
+    position: relative;
+}
+
+#aboutContainer {
+    background: none;
+    color: #f9f7f7;
+    text-align: left;
+    padding: 0px;
+}
+
+#aboutContainer > div > h1 {
+    font-size: 50px;
+    margin-bottom: 0px;
+}
+#aboutContainer > div > h2 {
+    font-weight: 300;
+    margin-top: 5px;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+#aboutContainer > div > p {
+   font-size: 15px;
+   font-weight: 100;
+}
+
+#loginContainer > form {
+    width: 100%;
+}
+
+#loginContainer > form > div{
+    font-size: 12px;
+    margin-left: 20px;
+    margin-top: 10px;
+    padding-left: 23%;
+    color: #3f72af;
+
+}
+
+#loginContainer > form > .btn {
+    width: 60%;
+    margin: 30px;
+    color: #f9f7f7;
+    background-color: #1d4d4f;
+    height: 30px;
+}
+
+#loginContainer > form > p {
+    color: #337ab7;
+    margin: 0px;
+}
+/* 
+.pp{
+    border-radius: 50%;
+    margin-top: 20%;
+    margin-bottom: 5%;
+    width: 30%;
+} */
+
+
+/* .log_btn{
+    width: 60%;
+
+    margin-top: 4%;
+    margin-bottom: 10%;
+
+    color: white;
+    background-color: #1582A5;
+    border-color: #1582A5;
+}
+
+#signup_{
+    margin-bottom: 10%;
+    color: #1582A5;
+} */
+
+.signup:hover{
+    text-decoration: underline;
+}
+
+/* ------------------- FORGOTPW CONTENT ------------------- */
+
+#fpwWidth{
+    max-width: 980px;
+    background: #1d4d4f;
+}
+.txt{
+    max-width:  300px;
+    text-align: justify;
+    color: #1d4d4f;
+    font-size: 15px;
+}
+
+#fp_inner
+{
+    margin: 100px auto;
+    padding: 60px 0px;
+    width: 50%;
+    height: 100%;
+    background: #f9f7f7;
+
+    border-radius: 15px;
+}
+
+#val_code
+{
+    margin: 20px 0px;
+    width: 250px;
+} 
+
+/* 
+#reset_btn
+{
+    width: 180px;
+    background-color: white;
+} */
+
+#reset_btn:hover {
+    background-color: #1d4d4f;
+    color: white;
+}
+
+/* ------------------- RESETPW CONTENT ------------------- */
+
+/* #newpw, #verifypw{
+    padding-bottom: 2%;
+    margin-bottom: 2%;
+    width: 60%;
+
+    border-top: none;
+    border-left: none;
+    border-right: none;
+
+    border-bottom: 1px solid #288BFF;
+} */
+
+#newpw
+{
+    margin-top: 10%;
+}
+
+/* ------------------- SUCCESSFUL PW RESET CONTENT ------------------- */
+.is-visible { opacity: 1;    }
+.is-hidden {  opacity: 0;    }
+.is-removed { display: none; }
+
+/* visual styling */ 
+#message {
+
+    width: 200px;
+    padding: 10px;
+    text-align: center;
+    background: #6fb98f;
+    position: fixed;
+    right: 100%;
+    color: white;
+    font-weight: 700;
+    border-radius: 5px;
+    animation-name: popupNotif;
+    animation-duration: 3s;
+}
+
+@keyframes popupNotif {
+    0% {
+        left: 50px;
+    }
+    50% {
+        left: 100px;
+        
+    }
+    100% {
+        left: -250px;
+    }
+}
+
+.notification
+{
+    width: 33%;
+    height: 10%;
+    margin: auto;
+}
+
+/* ------------------- SIGNUP CONTENT ------------------- */
+
+
+#header{
+    color: white;
+}
+
+#header > p {
+    font-weight: 300;
+}
+
+.steps 
+{
+    padding: 30px;
+    padding-bottom: 50px;
+    margin-bottom: 30px;
+    width: 100%;
+    background-color: white;
+    border-radius: 15px;
+    padding-bottom: 3%;
+}
+
+.steps > h4{
+    color: #1d4d4f;
+    font-weight: 700;
+}
+
+.su_pp
+{
+    border-radius: 50%;
+    width: 100%;
+
+    padding: 3%;
+
+}
+
+.picture{
+    margin: auto;
+    width: 20%;
+}
+
+
+#ln, #fn, #mi, #BHname, #address, #contNum, #emailad, #un, #pw1, #pw2
+{
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 0px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    padding-left: 5px;
+}  
+
+.prices 
+{
+    width: 100%; 
+    height: auto;
+    
+
+}
+
+#price1,  #price2, #price3
+{
+    margin: 10%;
+    padding: 7%;
+    width: 80%;
+
+    display: inline-block;
+
+    border-radius: 15px;
+    border: 3px solid #3f72af;
+    text-align: center;
+    color: #1d4d4f;
+    font-weight: 700;
+}
+
+.subs_btn 
+{
+    width: auto;
+}
+
+.prices > div > h3 {
+    font-weight: 700;
+    margin-bottom: 0px;
+}
+/* #signup_btn
+{
+    width: 20%;
+    margin-top: 4%;
+    margin-bottom: 10%;
+
+    color: white;
+    background-color: #1582A5;
+    border-color: #1582A5;
+    float: right;
+} */
+
+#step2{
+    margin-top: 3%;
+
+}
+
+/* ------------------- PROFILE CONTENT ------------------- */
+#profileWidth {
+    max-width: 980px;
+    background: white;
+}
+
+.profilePP
+{
+    border-radius: 50%;
+    margin-left: 15%;
+    margin-bottom: 6%;
+    width: 70%;
+}
+
+#username_profile
+{
+    margin: auto;
+    color: #288BFF;
+}
+
+.text{ 
+    width: 100%;
+    text-align: center;
+    color: #288BFF; 
+}
+
+#change_pw
+{
+    color: #D29A9A;
+}
+
+#change_pw:hover
+{
+    color: #288BFF;
+}
+
+#logout_btn{
+    width: auto;
+    margin-bottom: 5%;
+
+    color: white;
+    background-color: #1582A5;
+    border-color: #1582A5;
+}
+
+#cur_pw, #new_pw, #ver_pw
+{
+    padding-bottom: 2%;
+    margin-bottom: 6%;
+    width: 40%;
+
+    border-top: none;
+    border-left: none;
+    border-right: none;
+
+    border-bottom: 1px solid #288BFF;
+} 
+#updatepw_btn
+{
+    width: auto;
+    margin: 1%;
+    margin-left: 60%;
+
+    color: white;
+    background-color: #1582A5;
+    border-color: #1582A5;
+}
+
+

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Create Account</title>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Boarder</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+		<div id="mainWidth" class="container">
+			<div class="navbar-header">
+				<button type="button" class="nav navbar-toggle collapsed" data-toggle="collapse" data-target="#navoptions" aria-expanded="false" id="btn">
+			        <span class="sr-only">Toggle navigation</span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			    </button>
+
+				 <div id = "brandDiv" class="col-lg-10 col-md-10 col-sm-9 col-xs-7">
+               		 <h1 id="brandBoarder">Boarder</h1>
+           		 </div>
+			</div>
+			<div id="optionsContainer">
+				<div class="collapse navbar-collapse" id="navoptions">
+					<div class="nav navbar-right">
+						<ul class="nav navbar-nav">
+							<li><a style="color:white" href="/about">About</a></li>
+							<li><a style="color:white" href="/login">Log In</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+
+		<div id="loginWidth" class="container ">
+
+			<div id="header" class="centerParent">
+				<h1>Sign Up</h1>
+				<h1><% %></h1>
+				<p>Start managing your boarding house in just after two easy steps.</p>
+			</div>
+
+			<form action="/processNew" method="POST" >
+				<div class="steps" id="step1">
+					<h4>Step 1: Fillup the form.</h4>
+					<!-- <div class="picture">
+						<img src="profile.png" class="su_pp" /></br>
+						<input type="file" accept="image" id="displayPic"/><br>
+					</div> -->
+				
+					<div class="row">
+						<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+							<input class="inputText" name="fname" type="text" placeholder="First Name" id="fn"/>
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+							<input class="inputText" name="lname" type="text" placeholder="Last Name" id="ln"/>
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+							<input class="inputText" name="mi" type="text" placeholder="M.I" id="mi"/></br>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+							<input class="inputText" name="houseName" type="text" placeholder="Name of Boarding House" id="BHname"/><br>
+						</div>
+						<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+							<!-- Technically this is optional since this will have no use for the website -->
+							<input class="inputText" name="address" type="text" placeholder="Address of your boarding house" id="address"/><br>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-6 col-md-4 col-sm-12 col-xs-12">
+							<input class="inputText" name="contNum" type="text" placeholder="Contact Number" id="contNum"/>
+						</div>
+						<div class="col-lg-6 col-md-4 col-sm-12 col-xs-12">
+							<input class="inputText" name="email" type="email" placeholder="Email" id="emailad"/></br>
+						</div>
+					</div>
+					<div class="row">	
+						<!-- <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+							<input class="inputText" type="text" placeholder="Username" id="un"/>
+						</div> -->
+						<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+							<input class="inputText" name="pass1" type="password" placeholder="Password" id="pw1"/>
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+							<input class="inputText" name="pass2" type="password" placeholder="Verify Password" id="pw2"/>
+						</div>
+					</div>		
+					
+				</div>
+				
+				<div class="steps" id="step2">
+					<h4>Step 2<br>Choose a subscription payment method.</h4><br>
+					<div class="row">
+						<div class="prices">
+							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+								<div id="price1"><h3>Monthly</h3>₱ 200.00<br><br><input type="radio" name="option" value="monthly" id="monthly"/></div>
+							</div>
+							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+								<div id="price2"><h3>Bi-Annually</h3>₱ 800.00<br><br><input type="radio" name="option" value="biannual"id="biannual"/></div>
+							</div>
+							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+								<div id="price3"><h3>Yearly</h3>₱ 1,800.00<br><br><input type="radio" name="option" value="yearly" id="yearly"/></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			
+
+				<div class="centerParent">
+					<input type="submit" value="PROCEED" id="signup_btn" class="btn centerChild"/><br>
+				</div>
+			</form>	
+		</div>
+		
+</body>
+</html>

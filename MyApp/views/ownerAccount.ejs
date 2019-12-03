@@ -1,0 +1,63 @@
+<% include partials/header%>
+
+<div id = "mainWidth" class="container">
+    <div id="nav" class="container">
+        <div class="navbar-header">
+            <button id="navBtn" type="button" class="nav navbar-toggle collapsed white" data-toggle="collapse" data-target="#navoptions" aria-expanded="false" id="btn">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar">___</span>
+                <span class="icon-bar">___</span>
+                <span class="icon-bar">___</span>
+            </button>
+
+             <div id = "brandDiv" class="col-lg-10 col-md-10 col-sm-9 col-xs-7">
+                    <h1 id="brandBoarder">Boarder</h1>
+                </div>
+        </div>
+        <div id="optionsContainer">
+            <div class="collapse navbar-collapse bg-light" id="navoptions">
+                <div class="nav navbar-right">
+                    <ul class="nav navbar-nav">
+                        <li><a class="white" href="/profile"> LName, FName </a></li>
+                        <li><a class="white" href="/login"> Log out </a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div id = "navBar" class="row">
+        <div id = "brandDiv" class="col-lg-10 col-md-10 col-sm-9 col-xs-7">
+            <h1 id="brandBoarder">Boarder</h1>
+        </div>
+        <div id = "accDiv" class="col-lg-2 col-md-2 col-sm-3 col-xs-5">
+            <ul>
+
+            </ul>
+            
+            
+            
+        </div>
+    </div> -->
+
+
+
+    <div class="tabs" >
+        <div class="accountingTab">
+            <button onclick="toggleAccountingTab(this)" id="accountingBtn" class="btn btn-default accountingBtn inactiveTab">Accounting</button>
+        </div>
+        <div class="houseTab">
+            <button onclick="toggleHouseTab(this)" id="houseBtn" class="btn btn-default accountingBtn">House</button>
+        </div>
+        <% include partials/accountingContent%>
+        <% include partials/houseContent%>
+        
+    </div>
+</div>
+
+<!-- 
+<% include partials/roomTile%> -->
+
+<script src="main.js"></script>
+
+
+<% include partials/footer %>

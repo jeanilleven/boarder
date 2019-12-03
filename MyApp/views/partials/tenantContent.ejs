@@ -1,0 +1,120 @@
+<span id="tenantContent" class="content hide">
+    <div id="searchSpan">
+        <input id="searchBox" type="text" placeholder="Search">
+    </div>
+    <div id="tileContainer" class="container">
+        <!-- set ID to the rood id -->
+        <div id="room1" class="tile col-lg-4 col-md-6 col-xs-12">
+            <h1 id="roomTitle">Rent No: </h1>
+            <div id = "buttonsContainer" class="container">
+                <!-- POSTPONE CHAT -->
+                <!-- <a id="chatBtn" class="btn btn-default">Enter Chat</a> -->
+                
+                <!-- redirects to chat page -->
+                <button id="occBtn"class="btn btn-default" onclick="dropOcc(this)">See Occupants</button>
+                <!-- this should activate a drop for adding, editing and removing occupants -->
+                <div id="occDropDwn" class="dropDwn hide">
+                    <ul id="occList">
+                        <li id="liSample1" class="">Justin Raz</li>
+                        <li id="liSample2" class="">Justine Raz</li>
+                    </ul>
+                </div>
+                <button id="invBtn"class="btn btn-default" onclick="dropInv(this)">Add Invoice</button>
+                <!-- activates a drop for adding an invoice -->
+                <div id="invDropDwn" class="dropDwn hide">
+                    <div>
+                        <table>
+                            <h3>No. 0001 </h3>
+                            <tr>
+                                <td class="tableLabel">Desciption</td>
+                                <td><textarea id="descInput" type="text" placeholder="Enter description"></textarea></td>
+                            </tr>
+                            <tr>
+                                <td class="tableLabel">Date</td>
+                                <td><input id="dateInput" type="date"></td>
+                            </tr>
+                        </table>
+                    </div>
+                    
+                    <p class="italicLabel">Items</p>
+                    <div>
+                        <ul id="invItemList">
+                            <li id="invItem1" class="">
+                                <div id="itemContainer">
+                                    <table>
+                                        <tr>
+                                            <td colspan="2"><input class="invInpTitle" type="text"placeholder="Item title"></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2"><input class="invInpDesc" type="text" placeholder="Description"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input class="invInpPrice" type="text" placeholder="Price"></td>
+                                            <td><input class="invInpQuan" type="text" placeholder="Quantity"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><button class="itemBtn">delete</button></td>
+                                            <td id="totalInItem"> <h4>0.00</h4></td>
+                                            
+                                        </tr>
+                                    </table>    
+                                </div>
+                            </li>
+                            <div class="center">
+                                <button id="invLiInput">Add Item</button>
+                            </div>
+                            
+                        </ul>
+                    </div>
+                    <table>
+                        <tr>
+                            <td class="tableLabel">Total  </td>
+                            <td><h3>0.00</h3></td>
+                        </tr>
+                    </table>
+                </div>
+                <button id="payBtn"class="btn btn-default" onclick="dropPay(this)">Add Payment</button>
+                <!-- activates a drop for adding an payment -->
+                <div id="payDropDwn" class="dropDwn hide">
+                    <form action="">
+                        <table>
+                            <tr>
+                                <td class="tableLabel">Amount Paid</td>
+                                <td><input id="amountInput" type="text" placeholder="0.00"></td>
+                            </tr>
+                            <tr>
+                                <td class="tableLabel">Desciption</td>
+                                <td><textarea id="descInput" type="text" placeholder="Enter description"></textarea></td>
+                            </tr>
+                            <tr>
+                                <td class="tableLabel">Date</td>
+                                <td><input id="dateInput" type="date"></td>
+                            </tr>
+                            <tr>
+                                <td class="tableLabel">Select Invoice</td>
+                                <td>
+                                    <select name="Invoice" class="sel">
+                                        <option value="001" class="opt">Invoice: 001</option>
+                                        <option value="002" class="opt">Invoice: 002</option>
+                                        <option value="003" class="opt">Invoice: 003</option>
+                                        <option value="004" class="opt">Invoice: 004</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </table>
+
+                    </form>
+                </div>
+            </div>
+            <h4 id="notesLabel">Messages</h4>
+            <ul id="list">
+                
+            </ul>
+            <br>
+            
+        </div>
+        <!-- <div id="addTile" class="tile tileAdd col-lg-4 col-md-6 col-xs-12">
+            <button class="btn" onclick="addTile(this)">+ Add Room</button>
+        </div> -->
+    </div>
+</span>

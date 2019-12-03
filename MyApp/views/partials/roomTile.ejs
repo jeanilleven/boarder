@@ -1,0 +1,103 @@
+<div id="roomTile" class="tile col-lg-4 col-md-6 col-xs-12 hide">
+    <h1 id="roomTitle">Room 1</h1>
+    <h4 id="notesLabel">Notes:</h4>
+    <ul id="list">
+        <li id="liSample1" onclick="itemDone(this)" onmouseover="mouseOver(this)" onmouseout="mouseOut(this)" class=""><button class="delBtn hide">delete</button>Personal meeting with tenants</li>
+        <li id="liSample2" onclick="itemDone(this)" onmouseover="mouseOver(this)" onmouseout="mouseOut(this)" class=""><button class="delBtn hide">delete</button>Schedule aircon cleaning</li>
+        <input id="liInput" type = "text" onkeypress="addItem(this)" placeholder="+ Add item">
+        
+    </ul>
+    <br>
+    <div id = "buttonsContainer" class="container">
+        <!-- POSTPONE CHAT -->
+        <!-- <a id="chatBtn" class="btn btn-default">Enter Chat</a> -->
+        
+        <!-- redirects to chat page -->
+        <button id="occBtn"class="btn btn-default" onclick="dropOcc(this)">Occupants</button>
+        <!-- this should activate a drop for adding, editing and removing occupants -->
+        <div id="occDropDwn" class="dropDwn hide">
+            <ul id="occList">
+                <li id="liSample1" onmouseover="mouseOver(this)" onmouseout="mouseOut(this)" class=""><button class="occDelBtn hide">delete</button>Justin Raz</li>
+                <li id="liSample2" onmouseover="mouseOver(this)" onmouseout="mouseOut(this)" class=""><button class="occDelBtn hide">delete</button>Justine Raz</li>
+                <input id="occLiInput" type = "text" onkeypress="addOcc(this)" placeholder="+ Add Occupant">
+            </ul>
+        </div>
+        <button id="invBtn"class="btn btn-default" onclick="dropInv(this)">Add Invoice</button>
+        <!-- activates a drop for adding an invoice -->
+        <div id="invDropDwn" class="dropDwn hide">
+            <form action="">
+                <table>
+                    <tr>
+                        <td class="tableLabel">Desciption</td>
+                        <td><textarea id="descInput" type="text" placeholder="Enter description"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td class="tableLabel">Date</td>
+                        <td><input id="dateInput" type="date"></td>
+                    </tr>
+                </table>
+
+            </form>
+            
+            <p class="italicLabel">Items</p>
+            <form action="">
+                <ul id="invItemList">
+                    <li id="invItem1" class="">
+                        <div id="itemContainer">
+                            <table>
+                                <tr>
+                                    <td colspan="2"><input class="invInpTitle" type="text"placeholder="Item title"></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2"><input class="invInpDesc" type="text" placeholder="Description"></td>
+                                </tr>
+                                <tr>
+                                    <td><input class="invInpPrice" type="text" placeholder="Price"></td>
+                                    <td><input class="invInpQuan" type="text" placeholder="Quantity"></td>
+                                </tr>
+                                <tr>
+                                    <td><button class="itemBtn">delete</button></td>
+                                    <td id="totalInItem">Total: 0.00</td>
+                                    
+                                </tr>
+                            </table>    
+                            
+                        </div>
+                    </li>
+                    <div class="center">
+                        <button id="invLiInput">Add Item</button>
+                    </div>
+                    
+                </ul>
+            </form>
+            <table>
+                <tr>
+                    <td class="tableLabel">Total  </td>
+                    <td><input id="amountInput" type="text" placeholder="0.00"></td>
+
+                </tr>
+            </table>
+        
+        </div>
+        <button id="payBtn"class="btn btn-default" onclick="dropPay(this)">Add Payment</button>
+        <!-- activates a drop for adding an payment -->
+        <div id="payDropDwn" class="dropDwn hide">
+            <form action="">
+                <table>
+                    <tr>
+                        <td class="tableLabel">Payment</td>
+                        <td><input id="amountInput" type="text" placeholder="0.00"></td>
+                    </tr>
+                    <tr>
+                        <td class="tableLabel">Desciption</td>
+                        <td><textarea id="descInput" type="text" placeholder="Enter description"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td class="tableLabel">Date</td>
+                        <td><input id="dateInput" type="date"></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,75 @@
+var room = new mongoose.Schema({
+	roomID: Number,
+	roomLabel: String,
+	roomCapacity: 	Number
+});
+
+var occupant = new mongoose.Schema({
+	fname: String,
+	lname: String,
+	mname: String,
+	password: String,
+});
+
+var rental = new mongoose.Schema({
+	roomID: Number,
+	rentalNum: Number,
+	tenants: [occupant], 
+	dateStarted: Date,
+	dateEnded: Date,
+	messages: [message]
+});
+
+var message = new mongoose.Schema({
+	dateCreated: Date,
+	creator: Number, //occID or ownerAccountID
+	messageBody: String,
+	isDocument: Boolean,
+});
+
+var invoice = new mongoose.Schema({
+	invNum: Number,
+	rental: Number, //optional
+	amount: Number,
+	description: String,
+	date: Date,
+	items: [{
+		description: String,
+		price: Number,
+		qty: Number
+	}]
+});
+
+var payment = new mongoose.Schema({
+	payNum: Number,
+	invNum: Number,
+	amount: Number,
+	description: String,
+	date: Date,
+});
+
+var product = new mongoose.Schema({
+	prodID: Number,
+	price: Number, //price per quantity
+	description: String,
+});
+
+var ownerAccount = new mongoose.Schema({
+	name: {
+		fname: String,
+		lname: String,
+		mname: String
+	},
+	houseName: String,
+	houseCode: String,
+	password: String,
+	address: String,
+	rooms: [room],
+	rents: [rental],
+	invoices: [invoice],
+	payments: [payment],
+	products: [product],
+	invNum: Number,
+	payNum: Number,
+	rentNum: Number
+});

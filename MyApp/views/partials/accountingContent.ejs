@@ -1,0 +1,238 @@
+<span id="accountingContent" class="content hide">
+    <ul id="listOfTables">
+        <li>
+            <h1>Accounts Receivable <button class="btn right" onclick="toggleHide('backInvModal')">Add Invoice</button></h1>
+            <!-- <button onclick="toggleHide('accReceivableTable')" class="btn btn-default accTableBtn" >Accounts Receivable</button> -->
+            <div id="accReceivableTable" class="tableContainer">
+                <table class="table">
+                    <thead class="table-head">
+                        <tr class="table-row">
+                            <th class="table-header">Date</th>
+                            <th class="table-header">Payee</th>
+                            <th class="table-header">Receive</th>
+                            <th class="table-header">Balance</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-body">
+                        <tr class="table-row">
+                            <td class="table-col">Jan 10, 2009</td>
+                            <td class="table-col">[Room 1] Isabella Mari Lepatan</td>
+                            <td class="table-col">1,000,000.00</td>
+                            <td class="table-col">1,000,000.00</td>
+                        </tr>
+                        <tr class="table-row">
+                            <td class="table-col">Jan 10, 2009</td>
+                            <td class="table-col">[Room 1] Isabella Mari Lepatan</td>
+                            <td class="table-col">1,000,000.00</td>
+                            <td class="table-col">2,000,000.00</td>
+                        </tr>
+                        <tr class="table-row">
+                            <td class="table-col">Jan 10, 2009</td>
+                            <td class="table-col">[Room 1] Isabella Mari Lepatan</td>
+                            <td class="table-col">1,000,000.00</td>
+                            <td class="table-col">3,000,000.00</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+            </div>
+        </li>
+        <li>
+            <h1>Cash Collection <button class="btn right" onclick="toggleHide('backPayModal')">Add Payment</button></h1>
+            <!-- <button onclick="toggleHide('cashCollectionTable')" class="btn btn-default accTableBtn">Cash Collections</button> -->
+            <div id="cashCollectionTable" class="tableContainer">
+                <table class="table">
+                    <thead class="table-head">
+                        <tr class="table-row">
+                            <th class="table-header">Number</th>
+                            <th class="table-header">Invoice Date</th>
+                            <th class="table-header">Due Date</th>
+                            <th class="table-header">Customer</th>
+                            <th class="table-header">Amount</th>
+                            <th class="table-header">Balance Due</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-body">
+                        <tr class="table-row">
+                            <td class="table-col">1</td>
+                            <td class="table-col">Jan 5, 2019</td>
+                            <td class="table-col">Jan 10, 2019</td>
+                            <td class="table-col">Justin Raz</td>
+                            <td class="table-col">42,069</td>
+                            <td class="table-col">3.145</td>
+                        </tr>
+                        <tr class="table-row">
+                            <td class="table-col">2</td>
+                            <td class="table-col">Feb 5, 2019</td>
+                            <td class="table-col">Feb 10, 2019</td>
+                            <td class="table-col">Justine Raz</td>
+                            <td class="table-col">42,069</td>
+                            <td class="table-col">3.145</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <!-- activates a drop for adding an payment -->
+
+            </div>
+        </li>
+
+
+        <div id="backInvModal" class="backBlur hide">
+            <div id="invDropDwn" class="">
+                <button class="exitBtn" onclick="toggleHide('backInvModal')">
+                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                </button>  
+                <div>
+                    <table>
+                        <h3 class="boldLabel">Add Invoice: No. 0001 </h3>
+                        <tr>
+                            <td class="tableLabel">Desciption</td>
+                            <td><textarea id="descInput" class="grey" type="text" placeholder="Enter description"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td class="tableLabel grey">Date</td>
+                            <td><input id="dateInput" type="date"></td>
+                        </tr>
+                        <tr>
+                            <td class="tableLabel">Link to Rent</td>
+                            <td>
+                                <select name="Invoice" class="sel grey">
+                                    <option value="001" class="opt">Rent: 001</option>
+                                    <option value="002" class="opt">Rent: 002</option>
+                                    <option value="003" class="opt">Rent: 003</option>
+                                    <option value="004" class="opt">Rent: 004</option>
+                                </select>
+
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <p class="italicLabel white">Items</p>
+                <div>
+                    <ul id="invItemList">
+                        <li id="invItem1" class="">
+                            <div id="itemContainer">
+                                <table>
+                                    <tr>
+                                        <td colspan="2"><input class="invInpTitle" type="text"placeholder="Item title"></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2"><input class="invInpDesc" type="text" placeholder="Description"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input class="invInpPrice" type="text" placeholder="Price"></td>
+                                        <td><input class="invInpQuan" type="text" placeholder="Quantity"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><button class="itemBtn">delete</button></td>
+                                        <td id="totalInItem" class="white"> <h4>0.00</h4></td>
+                                        
+                                    </tr>
+                                </table>    
+                            </div>
+                        </li>
+                        <div class="center">
+                            <button id="invLiInput">Add Item</button>
+                        </div>
+                        
+                    </ul>
+                </div>
+                <h3 class="white">Total: <span id="invoiceTotal">0.00</span></h3>
+                <button id="payBtn" class="greenBtn" onclick="dropPay(this)">Add Rent</button>
+            </div>
+        </div>
+
+        
+        <div id="backPayModal" class="backBlur hide">
+            <div id="payDropDwn" class="dropDwn">
+                <button class="exitBtn" onclick="toggleHide('backPayModal')">
+                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                </button>  
+                <p class="boldLabel">Add a pament</p>
+                <form action="">
+                    <table>
+                        <tr>
+                            <td class="tableLabel">Payment</td>
+                            <td><input id="amountInput" type="text" placeholder="0.00"></td>
+                        </tr>
+                        <tr>
+                            <td class="tableLabel">Desciption</td>
+                            <td><textarea id="descInput" type="text" placeholder="Enter description"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td class="tableLabel">Date</td>
+                            <td><input id="dateInput" type="date"></td>
+                        </tr>
+                        <tr>
+                            <td class="tableLabel">Link to Invoice</td>
+                            <td>
+                                <select name="Invoice" class="sel">
+                                    <option value="001" class="opt">Invoice: 001</option>
+                                    <option value="002" class="opt">Invoice: 002</option>
+                                    <option value="003" class="opt">Invoice: 003</option>
+                                    <option value="004" class="opt">Invoice: 004</option>
+                                </select>     
+                            </td>
+                        </tr>
+                    </table>
+                    <button id="payBtn" class="greenBtn " onclick="dropPay(this)">Add Payment</button>
+                </form>
+            </div>
+        </div>
+
+
+        <!--       HAVE MERCY ON URSELF AND MAKE THIS LAST PRIORITY
+        <li>
+            <button onclick="toggleHide('customerBalanceTable')" class="btn btn-default accTableBtn">Customer Balances</button>
+            <div id="customerBalanceTable" class="tableContainer hide">
+                <form action="">
+                    <label>Select payee</label>
+                    <select name="" id="">
+                        <option value="1">Room 1</option>
+                    </select>
+                    
+                    <select name="" id="">
+                        <option value="1">Justin</option>
+                        <option value="1">Justine</option>
+                    </select>
+                </form>
+                <table class="table">
+                    <thead class="table-head">
+                        <tr class="table-row">
+                            <th class="table-header">Type</th>
+                            <th class="table-header">Number</th>
+                            <th class="table-header">Date</th>
+                            <th class="table-header">Account</th>
+                            <th class="table-header">Amount</th>
+                            <th class="table-header">Running Balance</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-body">
+                        <tr class="table-row">
+                            <td class="table-col">Payment</td>
+                            <td class="table-col"> - </td>
+                            <td class="table-col">Jan 10, 2019</td>
+                            <td class="table-col">Cash Collection</td>
+                            <td class="table-col">-4,000</td>
+                            <td class="table-col">-4,000</td>
+                        </tr>
+                        <tr class="table-row">
+                            <td class="table-col">Invoice</td>
+                            <td class="table-col"> 1 </td>
+                            <td class="table-col">Jan 10, 2019</td>
+                            <td class="table-col">Accounts Receivable</td>
+                            <td class="table-col">4,000</td>
+                            <td class="table-col">0.00</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+            </div>
+        </li> 
+        -->
+    </ul>
+
+    
+</span>
